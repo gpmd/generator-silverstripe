@@ -1,0 +1,13 @@
+{
+  "name": "silverstripe/installer",
+  "description": "The SilverStripe Framework Installer",
+  "require": {
+    "php": ">=5.3.2",
+    "silverstripe/cms": "<%= silverstripeVersion %>",
+    "silverstripe/framework": "<%= silverstripeVersion %>"
+  },
+  "config": {
+    "process-timeout": 600
+  },
+  "minimum-stability": "dev"
+}
