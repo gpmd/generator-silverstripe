@@ -27,7 +27,9 @@ yo silverstripe
 Then visit the local domain you set up in your browser, eg. `http://my-project.dev`, and you should see a very basic SilverStripe install.
 
 Admin access: `http://my-project/admin`
+
 Admin username: `admin`
+
 Admin password: `password`
 
 ### Help
