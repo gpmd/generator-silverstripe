@@ -1,6 +1,6 @@
 **Note: This is very much a work in progress and is likely to be modified frequently!**
 
-# generator-silverstripe [![Build Status](https://secure.travis-ci.org/matt-bailey/generator-silverstripe.png?branch=master)](https://travis-ci.org/matt-bailey/generator-silverstripe)
+# generator-silverstripe [![Build Status](https://travis-ci.org/gpmd/generator-silverstripe.svg?branch=master)](https://travis-ci.org/gpmd/generator-silverstripe)
 
 ## Getting Started
 
