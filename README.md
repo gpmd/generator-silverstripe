@@ -1,4 +1,4 @@
-**Note: This is a work in progress - don't use it, it's not working yet...**
+**Note: This is very much a work in progress and is likely to be modified frequently!**
 
 # generator-silverstripe [![Build Status](https://secure.travis-ci.org/matt-bailey/generator-silverstripe.png?branch=master)](https://travis-ci.org/matt-bailey/generator-silverstripe)
 
@@ -7,43 +7,28 @@
 
 ## Getting Started
 
-### What is Yeoman?
+### What is this generator
 
-Trick question. It's not a thing. It's this guy:
+It scaffolds out a bare-bones [SilverStripe](http://www.silverstripe.org/) site for local development, including a basic [Grunt](http://gruntjs.com/) workflow for your theme.
 
-![](http://i.imgur.com/JHaAlBJ.png)
+### Are there any requirements?
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
+You'll need [Yeoman](http://yeoman.io/) if you haven't already got it.
 
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+Then you need to make sure you have Apache, MySQL and PHP running, an empty database ready, and the local domain name of your site added to your `/etc/hosts` file, eg. `127.0.0.1 my-project.dev`.
 
-```bash
-npm install -g yo
-```
+You could use something like [MAMP](http://www.mamp.info/en/) to manage all the above, or do it yourself - [here's a helpful guide](http://akrabat.com/php/setting-up-php-mysql-on-os-x-yosemite/) (if you're on OS X Yosemite).
 
-### Yeoman Generators
+### How do I use it
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-silverstripe from npm, run:
-
-```bash
-npm install -g generator-silverstripe
-```
-
-Finally, initiate the generator:
+Once you've done all the above simply run the following command in an empty directory and answer the questions:
 
 ```bash
 yo silverstripe
 ```
 
-### Getting To Know Yeoman
+### Help
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+This is provided as-is - use at your peril!
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
-
-
-## License
-
-MIT
+Feel free to [post issues on github](https://github.com/gpmd/generator-silverstripe/issues) and we'll try to respond in a timely fashion.

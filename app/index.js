@@ -19,7 +19,7 @@ var srcThemeDistDir = 'dist/';
 var srcThemeTemplatesDir = 'templates/';
 var silverstripeRepo = 'https://github.com/silverstripe/silverstripe-installer.git';
 var tempSilverstripeInstallerDir = tempDir + 'silverstripe-installer/';
-var gruntFrontendBoilerplateRepo = 'https://github.com/gpmd/grunt-frontend-boilerplate.git';
+var gruntFrontendBoilerplateRepo = 'https://github.com/matt-bailey/grunt-frontend-boilerplate.git';
 var tempGruntFrontendBoilerplateDir = tempDir + 'grunt-frontend-boilerplate/';
 var successMessage = 'Done';
 
@@ -59,14 +59,38 @@ module.exports = yeoman.generators.Base.extend({
       name: 'silverstripeVersion',
       message: 'Enter SilverStripe Version',
       default: '3.1.8'
+    }, {
+      type: 'input',
+      name: 'silverstripeDbHost',
+      message: 'Enter SilverStripe Database Host',
+      default: '127.0.0.1'
+    }, {
+      type: 'input',
+      name: 'silverstripeDbName',
+      message: 'Enter SilverStripe Database Name',
+      default: 'my-project'
+    }, {
+      type: 'input',
+      name: 'silverstripeDbUsername',
+      message: 'Enter SilverStripe Database Username',
+      default: 'root'
+    }, {
+      type: 'input',
+      name: 'silverstripeDbPassword',
+      message: 'Enter SilverStripe Database Password',
+      default: ''
     }];
 
-    this.log(chalk.green('Tell us a bit about your project...'));
+    this.log(chalk.green('Tell me a bit about your project...'));
     this.prompt(prompts, function (props) {
       this.projectName = props.projectName;
       this.projectVersion = props.projectVersion;
       this.yourEmail = props.yourEmail;
       this.silverstripeVersion = props.silverstripeVersion;
+      this.silverstripeDbHost = props.silverstripeDbHost;
+      this.silverstripeDbName = props.silverstripeDbName;
+      this.silverstripeDbUsername = props.silverstripeDbUsername;
+      this.silverstripeDbPassword = props.silverstripeDbPassword;
       this.srcThemeDir = srcThemesDir + props.projectName + '/';
       done();
     }.bind(this));
@@ -93,6 +117,10 @@ module.exports = yeoman.generators.Base.extend({
     this.template('__ss_environment.php', sharedDir + '_ss_environment.php', {
       projectName: this.projectName,
       yourEmail: this.yourEmail,
+      silverstripeDbHost: this.silverstripeDbHost,
+      silverstripeDbName: this.silverstripeDbName,
+      silverstripeDbUsername: this.silverstripeDbUsername,
+      silverstripeDbPassword: this.silverstripeDbPassword,
       webRoot: webRoot
     });
     this.template('_composer.json', webRoot + 'composer.json');
@@ -172,14 +200,14 @@ module.exports = yeoman.generators.Base.extend({
           ],
           msg: 'Moving required silverstripe-installer files...'
         });
-        
+
         // Clone grunt-frontend-boilerplate repo
         this.tasks.push({
           cmd: 'git',
           args: [
-          'clone',
-          gruntFrontendBoilerplateRepo,
-          tempGruntFrontendBoilerplateDir
+            'clone',
+            gruntFrontendBoilerplateRepo,
+            tempGruntFrontendBoilerplateDir
           ],
           msg: 'Cloning grunt-frontend-boilerplate repo...'
         });
@@ -188,11 +216,11 @@ module.exports = yeoman.generators.Base.extend({
         this.tasks.push({
           cmd: 'rsync',
           args: [
-          '-vaz',
-          '--exclude-from',
-          tempDir + 'grunt-frontend-boilerplate-excludes.txt',
-          tempGruntFrontendBoilerplateDir,
-          this.srcThemeDir
+            '-vaz',
+            '--exclude-from',
+            tempDir + 'grunt-frontend-boilerplate-excludes.txt',
+            tempGruntFrontendBoilerplateDir,
+            this.srcThemeDir
           ],
           msg: 'Moving required grunt-frontend-boilerplate files...'
         });
@@ -215,6 +243,16 @@ module.exports = yeoman.generators.Base.extend({
             cwd: this.srcThemeDir
           },
           msg: 'Installing bower components...'
+        });
+
+        // Grunt build
+        this.tasks.push({
+          cmd: 'grunt',
+          args: [],
+          opts: {
+            cwd: this.srcThemeDir
+          },
+          msg: 'Building the theme...'
         });
 
         // composer install
