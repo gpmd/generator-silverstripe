@@ -2,23 +2,28 @@
 
 # generator-silverstripe [![Build Status](https://travis-ci.org/gpmd/generator-silverstripe.svg?branch=master)](https://travis-ci.org/gpmd/generator-silverstripe)
 
+> A [Yeoman](http://yeoman.io/) generator for [SilverStripe](http://www.silverstripe.org/) CMS projects
+
 ## Getting Started
 
-### What is this generator
+### What is it
 
-It scaffolds out a bare-bones [SilverStripe](http://www.silverstripe.org/) site for local development, including a basic [Grunt](http://gruntjs.com/) workflow for your theme.
+It scaffolds out a bare-bones SilverStripe site for local development, including a basic [Grunt](http://gruntjs.com/) workflow for your theme.
 
-### Are there any requirements?
+### Requirements
 
-You'll need [Yeoman](http://yeoman.io/) if you haven't already got it.
+1. [Node](http://nodejs.org/)
+- [Yeoman](http://yeoman.io/) (this will also install [Grunt](http://gruntjs.com/) and [Bower](http://bower.io/))
+- You'll need Apache, MySQL and PHP to be running
+- An empty MySQL database
+- The local domain name of your site added to your `/etc/hosts` file, eg. `127.0.0.1 my-project.dev`
+- [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 
-Then you need to make sure you have Apache, MySQL and PHP running, an empty database ready, and the local domain name of your site added to your `/etc/hosts` file, eg. `127.0.0.1 my-project.dev`.
+You could use something like [MAMP](http://www.mamp.info/en/) to manage Apache, MySQL and PHP, or set them up yourself - [here's a helpful guide](http://akrabat.com/php/setting-up-php-mysql-on-os-x-yosemite/) (if you're on OS X Yosemite).
 
-You could use something like [MAMP](http://www.mamp.info/en/) to manage all the above, or do it yourself - [here's a helpful guide](http://akrabat.com/php/setting-up-php-mysql-on-os-x-yosemite/) (if you're on OS X Yosemite).
+### How to use it
 
-### How do I use it
-
-Once you've done all the above run the following command in an empty directory and answer the questions:
+Once you're satisfied your system meets the above requirements run the following command in an empty directory and answer the questions it asks you:
 
 ```bash
 yo silverstripe
@@ -26,7 +31,9 @@ yo silverstripe
 
 Then visit the local domain you set up in your browser, eg. `http://my-project.dev`, and you should see a very basic SilverStripe install.
 
-Admin access: `http://my-project/admin`
+### Admin access
+
+Admin URL: `http://my-project/admin`
 
 Admin username: `admin`
 
