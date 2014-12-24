@@ -1,4 +1,7 @@
+.editorconfig
 .git
+.gitattributes
+.gitignore
 assets
 composer.json
 install-frameworkmissing.html

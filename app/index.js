@@ -125,8 +125,8 @@ module.exports = yeoman.generators.Base.extend({
     });
     this.template('_composer.json', webRoot + 'composer.json');
     this.copy('_grunt-frontend-boilerplate-excludes.txt', tempDir + 'grunt-frontend-boilerplate-excludes.txt');
-    this.copy('gitignore', this.srcThemeDir + '.gitignore');
-    this.copy('gitattributes', this.srcThemeDir + '.gitattributes');
+    this.template('_gitignore', this.webRoot + '.gitignore');
+    this.copy('gitattributes', this.webRoot + '.gitattributes');
     this.template('_bower.json', this.srcThemeDir + 'bower.json');
     this.copy('bowerrc', this.srcThemeDir + '.bowerrc');
     this.copy('jshintrc', this.srcThemeDir + '.jshintrc');
