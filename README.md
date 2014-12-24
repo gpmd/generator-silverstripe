@@ -37,3 +37,8 @@ Admin password: `password`
 This is provided as-is - use at your peril!
 
 Feel free to [post issues on github](https://github.com/gpmd/generator-silverstripe/issues) and we'll try to respond in a timely fashion.
+
+
+### Made by
+
+[Matt Bailey](http://mattbailey.io/)
