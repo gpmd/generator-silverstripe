@@ -18,11 +18,17 @@ You could use something like [MAMP](http://www.mamp.info/en/) to manage all the 
 
 ### How do I use it
 
-Once you've done all the above simply run the following command in an empty directory and answer the questions:
+Once you've done all the above run the following command in an empty directory and answer the questions:
 
 ```bash
 yo silverstripe
 ```
+
+Then visit the local domain you set up in your browser, eg. `http://my-project.dev`, and you should see a very basic SilverStripe install.
+
+Admin access: `http://my-project/admin`
+Admin username: `admin`
+Admin password: `password`
 
 ### Help
 
