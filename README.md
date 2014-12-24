@@ -39,6 +39,10 @@ Admin username: `admin`
 
 Admin password: `password`
 
+### Git
+
+When you initialise the project as a git repo make `site/` the root directory. You should not track the `shared/` directory.
+
 ### Help
 
 This is provided as-is - use at your peril!
