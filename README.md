@@ -21,6 +21,12 @@ It scaffolds out a bare-bones SilverStripe site for local development, including
 
 You could use something like [MAMP](http://www.mamp.info/en/) to manage Apache, MySQL and PHP, or set them up yourself - [here's a helpful guide](http://akrabat.com/php/setting-up-php-mysql-on-os-x-yosemite/) (if you're on OS X Yosemite).
 
+### Installation
+
+```bash
+npm install --global generator-silverstripe
+```
+
 ### How to use it
 
 Once you're satisfied your system meets the above requirements run the following command in an empty directory and answer the questions it asks you:
