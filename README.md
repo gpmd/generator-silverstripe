@@ -2,9 +2,6 @@
 
 # generator-silverstripe [![Build Status](https://secure.travis-ci.org/matt-bailey/generator-silverstripe.png?branch=master)](https://travis-ci.org/matt-bailey/generator-silverstripe)
 
-> [Yeoman](http://yeoman.io) generator
-
-
 ## Getting Started
 
 ### What is this generator
