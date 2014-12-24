@@ -1,3 +1,6 @@
 .git
 assets
 composer.json
+install-frameworkmissing.html
+install.php
+Makefile
