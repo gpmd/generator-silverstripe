@@ -1,30 +1,28 @@
-**Note: This is very much a work in progress and is likely to be modified frequently!**
+**Note: This is a work in progress and is likely to be modified frequently!**
 
 # generator-silverstripe [![Build Status](https://travis-ci.org/gpmd/generator-silverstripe.svg?branch=master)](https://travis-ci.org/gpmd/generator-silverstripe)
 
-> A [Yeoman](http://yeoman.io/) generator for [SilverStripe](http://www.silverstripe.org/) CMS projects
+> A [Yeoman](http://yeoman.io/) generator for [SilverStripe](http://www.silverstripe.org/) CMS projects, including a basic [Grunt](http://gruntjs.com/) workflow.
 
 ## Getting Started
 
 ### What is it
 
-It scaffolds out a bare-bones SilverStripe site for local development, including a basic [Grunt](http://gruntjs.com/) workflow for your theme.
+A Yeoman generator that scaffolds out a bare-bones SilverStripe site, including a basic Grunt workflow ([grunt-frontend-boilerplate](https://github.com/matt-bailey/grunt-frontend-boilerplate)) for your theme assets.
 
 ### Requirements
 
 1. [Node](http://nodejs.org/)
 - [Yeoman](http://yeoman.io/) (this will also install [Grunt](http://gruntjs.com/) and [Bower](http://bower.io/))
-- You'll need Apache, MySQL and PHP to be running
-- An empty MySQL database
+- You'll need Apache, MySQL and PHP to be running (you could use [MAMP](http://www.mamp.info/en/) or [this guide](http://akrabat.com/php/setting-up-php-mysql-on-os-x-yosemite/) if you're on OS X Yosemite)
+- An empty MySQL database ready
 - The local domain name of your site added to your `/etc/hosts` file, eg. `127.0.0.1 my-project.dev`
 - [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
-
-You could use something like [MAMP](http://www.mamp.info/en/) to manage Apache, MySQL and PHP, or set them up yourself - [here's a helpful guide](http://akrabat.com/php/setting-up-php-mysql-on-os-x-yosemite/) (if you're on OS X Yosemite).
 
 ### Installation
 
 ```bash
-npm install --global generator-silverstripe
+npm install -g generator-silverstripe
 ```
 
 ### How to use it
@@ -39,21 +37,42 @@ Then visit the local domain you set up in your browser, eg. `http://my-project.d
 
 ### Admin access
 
-Admin URL: `http://my-project/admin`
+**Admin URL:** `http://my-project/admin`<br>
+**Admin username:** `admin`<br>
+**Admin password:** `password`
 
-Admin username: `admin`
+### Directory structure
 
-Admin password: `password`
+The generator scaffolds out a project with the following structure:
 
-### Git
+```
+# Do not track `shared` directory in Git
+# These directories and files are symlinked into the `site` directory
 
-When you initialise the project as a git repo make `site/` the root directory. You should not track the `shared/` directory.
+shared/
+shared/assets/
+shared/silverstripe-cache/
+shared/_ss_environment.php
+
+# Make `site` your Git root
+
+site/
+site/public_html/ # SilverStripe cms, framework, my-site, modules etc.
+site/themes/
+site/themes/[my-project]/ # Theme assets and templates, Bower components, Grunt workflow etc.
+```
+
+### A note on version control
+
+When you initialise the project as a git repo make sure `site/` is the root version controlled directory. You should not track the `shared/` directory.
+
+### To do
+
+- Add some basic 'starter' `.ss` template files.
 
 ### Help
 
-This is provided as-is - use at your peril!
-
-Feel free to [post issues on github](https://github.com/gpmd/generator-silverstripe/issues) and we'll try to respond in a timely fashion.
+This is provided as-is - use at your peril! Feel free to [post issues on github](https://github.com/gpmd/generator-silverstripe/issues) and we'll try to respond in a timely fashion.
 
 
 ### Made by
