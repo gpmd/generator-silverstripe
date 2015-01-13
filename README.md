@@ -1,6 +1,6 @@
 **Note: This is a work in progress and is likely to be modified frequently!**
 
-# generator-silverstripe [![Build Status](https://travis-ci.org/gpmd/generator-silverstripe.svg?branch=master)](https://travis-ci.org/gpmd/generator-silverstripe)
+# generator-silverstripe v0.0.2 [![Build Status](https://travis-ci.org/gpmd/generator-silverstripe.svg?branch=master)](https://travis-ci.org/gpmd/generator-silverstripe)
 
 > A [Yeoman](http://yeoman.io/) generator for [SilverStripe](http://www.silverstripe.org/) CMS projects, including a basic [Grunt](http://gruntjs.com/) workflow.
 
@@ -68,7 +68,7 @@ When you initialise the project as a git repo make sure `site/` is the root vers
 
 ### To do
 
-- Add some basic 'starter' `.ss` template files.
+- Add basic Sass directory structure
 
 ### Help
 

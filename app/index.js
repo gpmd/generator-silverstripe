@@ -105,14 +105,14 @@ module.exports = yeoman.generators.Base.extend({
     this.mkdir(sharedDir + 'silverstripe-cache');
     this.mkdir(webRoot + 'themes');
     this.mkdir(this.srcThemeDir + srcThemeDistDir);
-    this.mkdir(this.srcThemeDir + srcThemeTemplatesDir + 'Includes');
-    this.mkdir(this.srcThemeDir + srcThemeTemplatesDir + 'Layout');
     this.mkdir(this.srcThemeDir + srcThemeTemplatesDir + 'Widgets');
     this.log(chalk.green.bold(successMessage));
 
     /* Copy core files */
 
     this.log(chalk.green('Copying core project files...'));
+
+    // Core project files
     this.copy('_silverstripe-excludes.txt', tempDir + 'silverstripe-excludes.txt');
     this.template('__ss_environment.php', sharedDir + '_ss_environment.php', {
       projectName: this.projectName,
@@ -131,6 +131,19 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('bowerrc', this.srcThemeDir + '.bowerrc');
     this.copy('jshintrc', this.srcThemeDir + '.jshintrc');
     this.copy('editorconfig', this.srcThemeDir + '.editorconfig');
+
+    // Silverstripe theme files
+    this.copy('_Page.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Page.ss');
+    this.copy('_PageLayout.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Layout/Page.ss');
+    this.copy('_BreadCrumbs.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/BreadCrumbs.ss');
+    this.copy('_BrowseHappy.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/BrowseHappy.ss');
+    this.copy('_Footer.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/Footer.ss');
+    this.copy('_GoogleAnalytics.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/GoogleAnalytics.ss');
+    this.copy('_Head.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/Head.ss');
+    this.copy('_Header.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/Header.ss');
+    this.copy('_Navigation.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/Navigation.ss');
+    this.copy('_favicon-16x16.png', webRoot + 'favicon-16x16.png');
+
     this.log(chalk.green.bold(successMessage));
   },
 
