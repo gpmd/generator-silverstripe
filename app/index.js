@@ -111,6 +111,8 @@ module.exports = yeoman.generators.Base.extend({
     /* Copy core files */
 
     this.log(chalk.green('Copying core project files...'));
+
+    // Core project files
     this.copy('_silverstripe-excludes.txt', tempDir + 'silverstripe-excludes.txt');
     this.template('__ss_environment.php', sharedDir + '_ss_environment.php', {
       projectName: this.projectName,
@@ -129,6 +131,8 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('bowerrc', this.srcThemeDir + '.bowerrc');
     this.copy('jshintrc', this.srcThemeDir + '.jshintrc');
     this.copy('editorconfig', this.srcThemeDir + '.editorconfig');
+
+    // Silverstripe theme files
     this.copy('_Page.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Page.ss');
     this.copy('_PageLayout.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Layout/Page.ss');
     this.copy('_BreadCrumbs.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/BreadCrumbs.ss');
@@ -139,6 +143,7 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('_Header.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/Header.ss');
     this.copy('_Navigation.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/Navigation.ss');
     this.copy('_favicon-16x16.png', webRoot + 'favicon-16x16.png');
+
     this.log(chalk.green.bold(successMessage));
   },
 
