@@ -2,13 +2,13 @@
 
 # generator-silverstripe v0.0.3 [![Build Status](https://travis-ci.org/gpmd/generator-silverstripe.svg?branch=master)](https://travis-ci.org/gpmd/generator-silverstripe)
 
-> A [Yeoman](http://yeoman.io/) generator for [SilverStripe](http://www.silverstripe.org/) CMS projects, including a basic [Grunt](http://gruntjs.com/) workflow.
+> A [Yeoman](http://yeoman.io/) generator for [SilverStripe](http://www.silverstripe.org/) CMS projects, including a basic [Grunt](http://gruntjs.com/) workflow and [ITCSS](http://youtu.be/1OKZOV-iLj4) (Inverted Triangle CSS) Sass structure.
 
 ## Getting Started
 
 ### What is it
 
-A Yeoman generator that scaffolds out a bare-bones SilverStripe site, including a basic Grunt workflow ([grunt-frontend-boilerplate](https://github.com/matt-bailey/grunt-frontend-boilerplate)) for your theme assets.
+A Yeoman generator that scaffolds out a bare-bones SilverStripe site, including a basic Grunt workflow ([grunt-frontend-boilerplate](https://github.com/matt-bailey/grunt-frontend-boilerplate)), and ITCSS Sass directory and `@import` structure ([itcss-boilerplate](https://github.com/gpmd/itcss-boilerplate)).
 
 ### Requirements
 
@@ -65,10 +65,6 @@ site/themes/[my-project]/ # Theme assets and templates, Bower components, Grunt 
 ### A note on version control
 
 When you initialise the project as a git repo make sure `site/` is the root version controlled directory. You should not track the `shared/` directory.
-
-### To do
-
-- Add basic Sass directory structure
 
 ### Help
 
