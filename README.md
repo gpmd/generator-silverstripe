@@ -68,7 +68,7 @@ When you initialise the project as a git repo make sure `site/` is the root vers
 
 ### To do
 
-- Add some basic 'starter' `.ss` template files.
+- Add basic Sass directory structure
 
 ### Help
 
