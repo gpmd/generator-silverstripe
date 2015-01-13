@@ -21,6 +21,8 @@ var silverstripeRepo = 'https://github.com/silverstripe/silverstripe-installer.g
 var tempSilverstripeInstallerDir = tempDir + 'silverstripe-installer/';
 var gruntFrontendBoilerplateRepo = 'https://github.com/matt-bailey/grunt-frontend-boilerplate.git';
 var tempGruntFrontendBoilerplateDir = tempDir + 'grunt-frontend-boilerplate/';
+var itcssBoilerplateRepo = 'https://github.com/gpmd/itcss-boilerplate.git';
+var tempItcssBoilerplateDir = tempDir + 'itcss-boilerplate/';
 var successMessage = 'Done';
 
 module.exports = yeoman.generators.Base.extend({
@@ -125,6 +127,7 @@ module.exports = yeoman.generators.Base.extend({
     });
     this.template('_composer.json', webRoot + 'composer.json');
     this.copy('_grunt-frontend-boilerplate-excludes.txt', tempDir + 'grunt-frontend-boilerplate-excludes.txt');
+    this.copy('_itcss-boilerplate-excludes.txt', tempDir + 'itcss-boilerplate-excludes.txt');
     this.template('_gitignore', webRoot + '.gitignore');
     this.copy('gitattributes', webRoot + '.gitattributes');
     this.template('_bower.json', this.srcThemeDir + 'bower.json');
@@ -236,6 +239,30 @@ module.exports = yeoman.generators.Base.extend({
             this.srcThemeDir
           ],
           msg: 'Moving required grunt-frontend-boilerplate files...'
+        });
+
+        // Clone itcss-boilerplate repo
+        this.tasks.push({
+          cmd: 'git',
+          args: [
+            'clone',
+            itcssBoilerplateRepo,
+            tempItcssBoilerplateDir
+          ],
+          msg: 'Cloning itcss-boilerplate repo...'
+        });
+
+        // Move itcss-boilerplate files
+        this.tasks.push({
+          cmd: 'rsync',
+          args: [
+            '-vaz',
+            '--exclude-from',
+            tempDir + 'itcss-boilerplate-excludes.txt',
+            tempItcssBoilerplateDir,
+            this.srcThemeDir + "src/styles/"
+          ],
+          msg: 'Moving required itcss-boilerplate files...'
         });
 
         // npm install
