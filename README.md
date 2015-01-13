@@ -1,6 +1,6 @@
 **Note: This is a work in progress and is likely to be modified frequently!**
 
-# generator-silverstripe v0.0.2 [![Build Status](https://travis-ci.org/gpmd/generator-silverstripe.svg?branch=master)](https://travis-ci.org/gpmd/generator-silverstripe)
+# generator-silverstripe v0.0.3 [![Build Status](https://travis-ci.org/gpmd/generator-silverstripe.svg?branch=master)](https://travis-ci.org/gpmd/generator-silverstripe)
 
 > A [Yeoman](http://yeoman.io/) generator for [SilverStripe](http://www.silverstripe.org/) CMS projects, including a basic [Grunt](http://gruntjs.com/) workflow.
 
