@@ -146,6 +146,7 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('_Header.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/Header.ss');
     this.copy('_Navigation.ss', this.srcThemeDir + srcThemeTemplatesDir + 'Includes/Navigation.ss');
     this.copy('_favicon-16x16.png', webRoot + 'favicon-16x16.png');
+    this.copy('_editor.scss', tempDir + 'editor.scss');
 
     this.log(chalk.green.bold(successMessage));
   },
@@ -260,9 +261,19 @@ module.exports = yeoman.generators.Base.extend({
             '--exclude-from',
             tempDir + 'itcss-boilerplate-excludes.txt',
             tempItcssBoilerplateDir,
-            this.srcThemeDir + "src/styles/"
+            this.srcThemeDir + 'src/styles/'
           ],
           msg: 'Moving required itcss-boilerplate files...'
+        });
+
+        // Move editor.scss
+        this.tasks.push({
+          cmd: 'cp',
+          args: [
+            tempDir + 'editor.scss',
+            this.srcThemeDir + 'src/styles/editor.scss'
+          ],
+          msg: 'Moving SilverStripe editor.scss...'
         });
 
         // npm install
