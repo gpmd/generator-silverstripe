@@ -10,6 +10,10 @@
 
 A Yeoman generator that scaffolds out a bare-bones SilverStripe site, including a basic Grunt workflow ([grunt-frontend-boilerplate](https://github.com/matt-bailey/grunt-frontend-boilerplate)), and ITCSS Sass directory and `@import` structure ([itcss-boilerplate](https://github.com/gpmd/itcss-boilerplate)).
 
+This is what you will end up with:
+
+![yeoman-generator-silverstripe-structure](https://cloud.githubusercontent.com/assets/969385/5838194/8591add6-a17d-11e4-88ed-cdaf4cfc5df1.png)
+
 ### Requirements
 
 1. [Node](http://nodejs.org/)
