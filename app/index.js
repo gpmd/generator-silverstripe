@@ -277,34 +277,34 @@ module.exports = yeoman.generators.Base.extend({
         });
 
         // npm install
-        // this.tasks.push({
-        //   cmd: 'npm',
-        //   args: ['install'],
-        //   opts: {
-        //     cwd: this.srcThemeDir
-        //   },
-        //   msg: 'Installing npm dependencies...'
-        // });
+        this.tasks.push({
+          cmd: 'npm',
+          args: ['install'],
+          opts: {
+            cwd: this.srcThemeDir
+          },
+          msg: 'Installing npm dependencies...'
+        });
 
         // bower install
-        // this.tasks.push({
-        //   cmd: 'bower',
-        //   args: ['install'],
-        //   opts: {
-        //     cwd: this.srcThemeDir
-        //   },
-        //   msg: 'Installing bower components...'
-        // });
+        this.tasks.push({
+          cmd: 'bower',
+          args: ['install'],
+          opts: {
+            cwd: this.srcThemeDir
+          },
+          msg: 'Installing bower components...'
+        });
 
         // Grunt build
-        // this.tasks.push({
-        //   cmd: 'grunt',
-        //   args: [],
-        //   opts: {
-        //     cwd: this.srcThemeDir
-        //   },
-        //   msg: 'Building the theme...'
-        // });
+        this.tasks.push({
+          cmd: 'grunt',
+          args: [],
+          opts: {
+            cwd: this.srcThemeDir
+          },
+          msg: 'Building the theme...'
+        });
 
         // composer install
         this.tasks.push({
