@@ -25,15 +25,17 @@ nbproject
 .idea
 
 # General Silverstripe
-/public_html/assets/*
-/public_html/tools/phing-metadata
-/public_html/silverstripe-cache
-/public_html/.buildpath
-/public_html/vendor/
+public_html/assets/*
+public_html/tools/phing-metadata
+public_html/silverstripe-cache/*
+public_html/.buildpath
 
 # Silverstripe components and modules
 public_html/cms
 public_html/framework
+
+# Composer packages
+/vendor
 
 # General folders
 node_modules
