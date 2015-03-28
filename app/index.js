@@ -60,7 +60,7 @@ module.exports = yeoman.generators.Base.extend({
       type: 'input',
       name: 'silverstripeVersion',
       message: 'Enter SilverStripe Version',
-      default: '3.1.10'
+      default: '3.1.12'
     }, {
       type: 'input',
       name: 'silverstripeDbHost',
@@ -125,11 +125,11 @@ module.exports = yeoman.generators.Base.extend({
       silverstripeDbPassword: this.silverstripeDbPassword,
       webRoot: webRoot
     });
-    this.template('_composer.json', webRoot + 'composer.json');
+    this.template('_composer.json', trackedDir + 'composer.json');
     this.copy('_grunt-frontend-boilerplate-excludes.txt', tempDir + 'grunt-frontend-boilerplate-excludes.txt');
     this.copy('_itcss-boilerplate-excludes.txt', tempDir + 'itcss-boilerplate-excludes.txt');
-    this.template('_gitignore', webRoot + '.gitignore');
-    this.copy('gitattributes', webRoot + '.gitattributes');
+    this.template('_gitignore', trackedDir + '.gitignore');
+    this.copy('gitattributes', trackedDir + '.gitattributes');
     this.template('_bower.json', this.srcThemeDir + 'bower.json');
     this.copy('bowerrc', this.srcThemeDir + '.bowerrc');
     this.copy('jshintrc', this.srcThemeDir + '.jshintrc');
@@ -311,7 +311,7 @@ module.exports = yeoman.generators.Base.extend({
           cmd: 'composer',
           args: ['install'],
           opts: {
-            cwd: webRoot
+            cwd: trackedDir
           },
           msg: 'Installing SilverStripe dependencies...'
         });

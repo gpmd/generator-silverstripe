@@ -9,5 +9,13 @@
   "config": {
     "process-timeout": 600
   },
+  "extra": {
+    "installer-paths": {
+      "./public_html/{$name}": [
+        "silverstripe/framework",
+        "silverstripe/cms"
+      ]
+    }
+  },
   "minimum-stability": "dev"
 }
