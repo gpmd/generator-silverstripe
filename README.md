@@ -1,6 +1,6 @@
 **Note: This is a work in progress and is likely to be modified frequently!**
 
-# generator-silverstripe v0.0.8 [![Build Status](https://travis-ci.org/gpmd/generator-silverstripe.svg?branch=master)](https://travis-ci.org/gpmd/generator-silverstripe)
+# generator-silverstripe [![Build Status](https://travis-ci.org/gpmd/generator-silverstripe.svg?branch=master)](https://travis-ci.org/gpmd/generator-silverstripe)
 
 > A [Yeoman](http://yeoman.io/) generator for [SilverStripe](http://www.silverstripe.org/) CMS projects, including a basic [Grunt](http://gruntjs.com/) workflow and [ITCSS](http://youtu.be/1OKZOV-iLj4) (Inverted Triangle CSS) Sass structure.
 
@@ -9,10 +9,6 @@
 ### What is it
 
 A Yeoman generator that scaffolds out a bare-bones SilverStripe site, including a basic Grunt workflow ([grunt-frontend-boilerplate](https://github.com/matt-bailey/grunt-frontend-boilerplate)), and ITCSS Sass directory and `@import` structure ([itcss-boilerplate](https://github.com/gpmd/itcss-boilerplate)).
-
-This is what you will end up with:
-
-![yeoman-generator-silverstripe-structure](https://cloud.githubusercontent.com/assets/969385/5838194/8591add6-a17d-11e4-88ed-cdaf4cfc5df1.png)
 
 ### Requirements
 
@@ -60,10 +56,10 @@ shared/_ss_environment.php
 
 # Make `site` your Git root
 
-site/
-site/public_html/ # SilverStripe cms, framework, my-site, modules etc.
-site/themes/
+site/ # .gitignore and composer.json
+site/public_html/ # SilverStripe cms, framework, my-site etc.
 site/themes/[my-project]/ # Theme assets and templates, Bower components, Grunt workflow etc.
+site/vendor/ # Composer packages
 ```
 
 ### A note on version control
