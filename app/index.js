@@ -60,7 +60,7 @@ module.exports = yeoman.generators.Base.extend({
       type: 'input',
       name: 'silverstripeVersion',
       message: 'Enter SilverStripe Version',
-      default: '3.1.12'
+      default: '3.1.13'
     }, {
       type: 'input',
       name: 'silverstripeDbHost',
